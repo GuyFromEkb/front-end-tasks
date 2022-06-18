@@ -10,4 +10,8 @@ if ("0") {
 
 const answer = prompt("Какое «официальное» название JavaScript?");
 
-(answer.toLocaleLowerCase() == "ecmascript") ? alert('Верно!'): alert('Не знаете? ECMAScript!');
+if (answer.toLocaleLowerCase() == "ecmascript") {
+    alert('Верно!');
+} else {
+    alert('Не знаете? ECMAScript!');
+}
