@@ -15,4 +15,8 @@ alert(1 && null && 2); // => null
 
 // Что выведет код ниже?
 
-alert(alert(1) && alert(2));
+alert(alert(1) && alert(2)); // => 1 после undefind
+
+// Что выведет код ниже?
+
+alert(null || 2 && 3 || 4); //
