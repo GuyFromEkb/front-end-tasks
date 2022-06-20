@@ -233,3 +233,6 @@ function nameFromObjArr(arr) {
     console.log(names);
 }
 nameFromObjArr(users);
+
+const names = users.map(item => item.name);
+console.log(names);
