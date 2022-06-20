@@ -267,20 +267,56 @@ usersMapped = [
 // Итак, на самом деле вам нужно трансформировать один массив объектов в другой. Попробуйте использовать =>. Это небольшая уловка. */
 
 
-let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+/* let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
 let petya = { name: "Петя", surname: "Иванов", id: 2 };
 let masha = { name: "Маша", surname: "Петрова", id: 3 };
 
-let userSS = [vasya, petya, masha];
+let userSS = [vasya, petya, masha]; */
 
 let usersMapped = userSS.map(item => {
     const obj = new Object();
 
-    obj[fullname] = item.name + " " + item.surname;
-    obj[id] = item.id;
+    obj['fullname'] = item.name + " " + item.surname;
+    obj['id'] = item.id;
 
     return obj;
 
 });
 
-console.log(usersMapped)
+console.log(usersMapped);
+
+/* 
+Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
+
+Например:
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let arr = [ vasya, petya, masha ];
+
+sortByAge(arr);
+
+// теперь: [vasya, masha, petya]
+alert(arr[0].name); // Вася
+alert(arr[1].name); // Маша
+alert(arr[2].name); // Петя */
+
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let arr1 = [vasya, petya, masha];
+
+function sortByAge(arr) {
+
+    return arr.sort((a, b) => {
+        return a.age - b.age;
+    });
+
+
+}
+
+console.log(sortByAge(arr1))
