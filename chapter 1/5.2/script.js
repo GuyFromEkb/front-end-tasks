@@ -5,10 +5,10 @@
 
 P.S. Есть «подводный камень» при работе с типами. */
 
-// const numb1 = +prompt("первое число ", "");
-// const numb2 = +prompt("второе число", "");
+const numb1 = +prompt("первое число ", "");
+const numb2 = +prompt("второе число", "");
 
-// alert(numb1 + numb2);
+alert(numb1 + numb2);
 
 /* Методы Math.round и toFixed, согласно документации, округляют до ближайшего целого числа: 0..4 округляется в меньшую сторону, тогда как 5..9 в большую сторону.
 
@@ -55,10 +55,39 @@ function readNumber() {
 //   i += 0.2;
 // }
 
-// Тут тоже сам не мог догодаться , подсмотрел и всё дело в той же потере точности, сейчас понял!
+Тут тоже сам не мог догодаться, подсмотрел и всё дело в той же потере точности, сейчас понял!
 
 
+    /* Встроенный метод Math.random() возвращает случайное число от 0 (включительно) до 1 (но не включая 1)
 
-function random(min, max) {
-    return Math.random() * (max - min) + min;
+    Напишите функцию random(min, max), которая генерирует случайное число с плавающей точкой от min до max (но не включая max).
+
+    Пример работы функции:
+
+    alert( random(1, 5) ); // 1.2345623452
+    alert( random(1, 5) ); // 3.7894332423
+    alert( random(1, 5) ); // 4.3435234525
+     */
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+
+//     Случайное целое число от min до max
+// важность: 2
+// Напишите функцию randomInteger(min, max), которая генерирует случайное целое (integer) число от min до max (включительно).
+
+// Любое число из интервала min..max должно появляться с одинаковой вероятностью.
+
+// Пример работы функции:
+
+// alert( randomInteger(1, 5) ); // 1
+// alert( randomInteger(1, 5) ); // 3
+// alert( randomInteger(1, 5) ); // 5
+
+
+function random2(min, max) {
+    const numb = min + Math.random() * (max + 1 - min);
+    return Math.floor(numb);
 }
+console.log(random2(1, 5));
