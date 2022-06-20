@@ -197,3 +197,39 @@ powerCalc.addMethod("/", (a, b) => a / b);
 powerCalc.addMethod("**", (a, b) => a ** b);
 
 console.log(powerCalc.calculate("2 ** 3"));
+
+
+
+
+
+
+
+/* 
+У вас есть массив объектов user, и в каждом из них есть user.name. Напишите код, который преобразует их в массив имён.
+
+Например:
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [ vasya, petya, masha ];
+
+let names = /* ... ваш код */
+
+// alert( names ); // Вася, Петя, Маша */
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [vasya, petya, masha];
+
+function nameFromObjArr(arr) {
+    const names = arr.reduce((acc, item) => {
+        acc.push(item['name']);
+        return acc;
+    }, []);
+    console.log(names);
+}
+nameFromObjArr(users);
