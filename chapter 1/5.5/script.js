@@ -84,6 +84,21 @@ function filterRangeInPlace(arr, value1, value2) {
     }
 
 }
-let arr = [1, 2, 16, 23, 5, 3, 8, 1];
-filterRangeInPlace(arr, 1, 4);
-console.log(arr);
+
+
+
+/* Сортировать в порядке по убыванию
+важность: 4
+let arr = [5, 2, 1, -10, 8];
+
+// ... ваш код для сортировки по убыванию
+
+alert( arr ); // 8, 5, 2, 1, -10 */
+
+let arr = [5, 2, 1, -10, 8];
+
+arr.sort(function(a, b) {
+    return b - a;
+});
+
+console.log(arr)
