@@ -304,11 +304,11 @@ alert(arr[1].name); // Маша
 alert(arr[2].name); // Петя */
 
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
 
-let arr1 = [vasya, petya, masha];
+// let arr1 = [vasya, petya, masha];
 
 function sortByAge(arr) {
 
@@ -320,3 +320,58 @@ function sortByAge(arr) {
 }
 
 console.log(sortByAge(arr1));
+
+/* 
+Напишите функцию shuffle(array), которая перемешивает (переупорядочивает случайным образом) элементы массива.
+
+Многократные прогоны через shuffle могут привести к разным последовательностям элементов. Например:
+
+let arr = [1, 2, 3];
+
+shuffle(arr);
+// arr = [3, 2, 1]
+
+shuffle(arr);
+// arr = [2, 1, 3]
+
+shuffle(arr);
+// arr = [3, 1, 2]
+// ...
+Все последовательности элементов должны иметь одинаковую вероятность. 
+Например, [1,2,3] может быть переупорядочено как [1,2,3] или [1,3,2], или [3,1,2] и т.д., с равной вероятностью каждого случая. */
+
+
+/* Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
+
+Формула вычисления среднего арифметического значения: (age1 + age2 + ... + ageN) / N.
+
+Например:
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 29 };
+
+let arr = [ vasya, petya, masha ];
+
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28 */
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 29 };
+
+let arr2 = [vasya, petya, masha];
+
+
+function getAverageAge(arr) {
+
+    let middleAge = 0;
+
+    middleAge = arr.reduce((acc, item) => {
+        acc += item.age;
+        return acc;
+    }, 0);
+
+    return Math.round(middleAge / arr.length);
+}
+
+console.log(getAverageAge(arr2));
