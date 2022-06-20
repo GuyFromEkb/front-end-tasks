@@ -57,4 +57,8 @@ function readNumber() {
 
 // Тут тоже сам не мог догодаться , подсмотрел и всё дело в той же потере точности, сейчас понял!
 
-console.log(Math.random(4));
+
+
+function random(min, max) {
+    return Math.random() * (max - min) + min;
+}
