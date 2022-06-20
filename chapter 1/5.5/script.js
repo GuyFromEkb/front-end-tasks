@@ -219,11 +219,11 @@ let names = /* ... ваш код */
 
 // alert( names ); // Вася, Петя, Маша */
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
 
-let users = [vasya, petya, masha];
+// let users = [vasya, petya, masha];
 
 function nameFromObjArr(arr) {
     const names = arr.reduce((acc, item) => {
@@ -234,5 +234,53 @@ function nameFromObjArr(arr) {
 }
 nameFromObjArr(users);
 
+
 const names = users.map(item => item.name);
 console.log(names);
+
+
+/* 
+У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+
+Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname.
+
+Например:
+
+let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya = { name: "Петя", surname: "Иванов", id: 2 };
+let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+let users = [ vasya, petya, masha ];
+
+let usersMapped = /* ... ваш код ... */
+
+/*
+usersMapped = [
+  { fullName: "Вася Пупкин", id: 1 },
+  { fullName: "Петя Иванов", id: 2 },
+  { fullName: "Маша Петрова", id: 3 }
+]
+*/
+
+// alert( usersMapped[0].id ) // 1
+// alert( usersMapped[0].fullName ) // Вася Пупкин
+// Итак, на самом деле вам нужно трансформировать один массив объектов в другой. Попробуйте использовать =>. Это небольшая уловка. */
+
+
+let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya = { name: "Петя", surname: "Иванов", id: 2 };
+let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+let userSS = [vasya, petya, masha];
+
+let usersMapped = userSS.map(item => {
+    const obj = new Object();
+
+    obj[fullname] = item.name + " " + item.surname;
+    obj[id] = item.id;
+
+    return obj;
+
+});
+
+console.log(usersMapped)
