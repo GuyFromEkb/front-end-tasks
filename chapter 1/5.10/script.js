@@ -52,16 +52,20 @@ let salaries = {
     "Mary": 250
 };
 
-const bufArr = Object.entries(salaries);
+function topSalary(obj) {
+    const bufArr = Object.entries(obj);
+    let objName = "",
+        objSalary = 0;
 
-let objName = "",
-    objSalary = 0;
-
-for (const [name, salary] of bufArr) {
-    if (objSalary < salary) {
-        objName = name;
-        objSalary = salary;
+    for (const [name, salary] of bufArr) {
+        if (objSalary < salary) {
+            objName = name;
+            objSalary = salary;
+        }
     }
+    return objName;
 }
 
-console.log(objName, objSalary);
+
+
+console.log(topSalary(salaries));
