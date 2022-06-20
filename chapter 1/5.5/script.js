@@ -95,10 +95,37 @@ let arr = [5, 2, 1, -10, 8];
 
 alert( arr ); // 8, 5, 2, 1, -10 */
 
-let arr = [5, 2, 1, -10, 8];
 
 arr.sort(function(a, b) {
     return b - a;
 });
 
-console.log(arr)
+
+
+/* У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+
+Создайте функцию copySorted(arr), которая будет возвращать такую копию.
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (без изменений) */
+
+
+function copySorted(arr) {
+
+    const newArr = arr.slice(0);
+    newArr.sort();
+
+    return newArr;
+
+}
+
+let arr1 = ["HTML", "JavaScript", "CSS"];
+
+arr2 = copySorted(arr1);
+
+console.log(arr1);
+console.log(arr2);
