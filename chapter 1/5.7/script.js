@@ -60,14 +60,6 @@ function aclean(arr) {
     }
 
     return Array.from(arrSet);
-
 }
 
-
-
-console.log(arrSet)
-const tstSet = new Set();
-tstSet.add(tst[1]);
-tstSet.add(tst[2]);
-
-console.log(tstSet)
+console.log(aclean(arr));
