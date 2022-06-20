@@ -29,3 +29,16 @@ style.push("Рок-н-Ролл");
 style[Math.floor((style.length - 1) / 2)] = "Классика";
 console.log(style.shift());
 style.unshift("Рэп", "Регги");
+
+
+/* Каков результат? Почему?
+
+let arr = ["a", "b"];
+
+arr.push(function() {
+  alert( this );
+});
+
+arr[2](); // ? */
+
+=> вернет изначальный массив, добавив туда функцию[a, b, function()]
