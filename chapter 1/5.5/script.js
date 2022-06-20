@@ -319,4 +319,4 @@ function sortByAge(arr) {
 
 }
 
-console.log(sortByAge(arr1))
+console.log(sortByAge(arr1));
