@@ -91,4 +91,4 @@ keys.push("more");
 
 console.log(keys)
 
-//
+// map.keys() Возвращает Map Iterator, у него нет методов Array
