@@ -58,4 +58,5 @@ let user = {
 function count(obj) {
     return Object.keys(obj).length;
 }
-console.log(count(obj));
+
+console.log(count(user));
