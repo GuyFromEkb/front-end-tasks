@@ -28,5 +28,40 @@ let user = {
 };
 
 let { name: name, years: age, isAdmin = false } = user;
-
 console.log(name, age, isAdmin);
+
+
+/* 
+
+У нас есть объект salaries с зарплатами:
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника.
+
+Если объект salaries пустой, то нужно вернуть null.
+Если несколько высокооплачиваемых сотрудников, можно вернуть любого из них.
+P.S. Используйте Object.entries и деструктурирование, чтобы перебрать пары ключ/значение. */
+
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
+
+const bufArr = Object.entries(salaries);
+
+let objName = "",
+    objSalary = 0;
+
+for (const [name, salary] of bufArr) {
+    if (objSalary < salary) {
+        objName = name;
+        objSalary = salary;
+    }
+}
+
+console.log(objName, objSalary);
