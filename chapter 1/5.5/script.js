@@ -58,8 +58,32 @@ function filterRange(arr, value1, value2) {
     return newArr;
 }
 
+/* Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. 
+То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+Функция должна изменять принимаемый массив и ничего не возвращать.
+Например:
+
 let arr = [5, 3, 8, 1];
-let filtered = filterRange(arr, 1, 4);
+
+filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+alert( arr ); // [3, 1] */
 
 
-console.log(filtered(testarr, 1, 4));
+function filterRangeInPlace(arr, value1, value2) {
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (arr[i] >= value1 && arr[i] <= value2) {
+            continue;
+        } else {
+            arr.splice(i, 1);
+            i--;
+        }
+
+    }
+
+}
+let arr = [1, 2, 16, 23, 5, 3, 8, 1];
+filterRangeInPlace(arr, 1, 4);
+console.log(arr);
