@@ -70,3 +70,7 @@ const jsonFile = JSON.stringify(meetup, (key, value) => {
 
 
 console.log(jsonFile);
+
+
+// ОООООООООЧЕНЬ тяжко, долго боролся, но 2 задачу прям не могу интуитивно понять.............
+//
