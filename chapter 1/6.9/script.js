@@ -159,32 +159,32 @@ P.S.Аргументы и контекст this, переданные в f1000, 
 
 function throttle(func, ms) {
 
-  let isThrottled = false,
-    savedArgs,
-    savedThis;
+    let isThrottled = false,
+        savedArgs,
+        savedThis;
 
-  function wrapper() {
+    function wrapper() {
 
-    if (isThrottled) { // (2)
-      savedArgs = arguments;
-      savedThis = this;
-      return;
+        if (isThrottled) { // (2)
+            savedArgs = arguments;
+            savedThis = this;
+            return;
+        }
+
+        func.apply(this, arguments); // (1)
+
+        isThrottled = true;
+
+        setTimeout(function() {
+            isThrottled = false; // (3)
+            if (savedArgs) {
+                wrapper.apply(savedThis, savedArgs);
+                savedArgs = savedThis = null;
+            }
+        }, ms);
     }
 
-    func.apply(this, arguments); // (1)
-
-    isThrottled = true;
-
-    setTimeout(function() {
-      isThrottled = false; // (3)
-      if (savedArgs) {
-        wrapper.apply(savedThis, savedArgs);
-        savedArgs = savedThis = null;
-      }
-    }, ms);
-  }
-
-  return wrapper;
+    return wrapper;
 }
 
 
