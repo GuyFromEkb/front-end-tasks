@@ -126,15 +126,60 @@ console.log(arr.filter(inBetween(3, 6))); // 3,4,5,6
 
 function inArray(arr) {
     return function(x) {
-      return arr.includes(x);
+        return arr.includes(x);
     };
-  }
-  
-  let arr1 = [1, 2, 3, 4, 5, 6, 7];
-  console.log( arr.filter(inArray([1, 2, 10])) ); // 1,2
+}
 
-  /* 
-  не мог прийти к решению самостоятельно, посмотрел в ответы, до сих пор мало что понятно....
-  почему так работает!!!!!...Надеюсь, что разберусь позже
+let arr1 = [1, 2, 3, 4, 5, 6, 7];
+console.log(arr.filter(inArray([1, 2, 10]))); // 1,2
+
+/* 
+не мог прийти к решению самостоятельно, посмотрел в ответы, до сих пор мало что понятно....
+почему так работает!!!!!...Надеюсь, что разберусь позже
   
-  */
+*/
+
+
+/* let users = [
+  { name: "John", age: 20, surname: "Johnson" },
+  { name: "Pete", age: 18, surname: "Peterson" },
+  { name: "Ann", age: 19, surname: "Hathaway" }
+];
+Обычный способ был бы таким:
+
+// по имени (Ann, John, Pete)
+users.sort((a, b) => a.name > b.name ? 1 : -1);
+
+// по возрасту (Pete, Ann, John)
+users.sort((a, b) => a.age > b.age ? 1 : -1);
+Можем ли мы сделать его короче, скажем, вот таким?
+
+users.sort(byField('name'));
+users.sort(byField('age')); */
+
+let users = [
+    { name: "John", age: 20, surname: "Johnson" },
+    { name: "Pete", age: 18, surname: "Peterson" },
+    { name: "Ann", age: 19, surname: "Hathaway" }
+];
+
+function byField(prop) {
+    return function(a, b) {
+        if (a[prop] > b[prop])
+            return 1;
+        else if (a[prop] < b[prop])
+            return -1;
+        else
+            return 0
+    };
+}
+
+
+
+console.log(users.sort(byField('name')));
+console.log(users.sort(byField('age')));
+
+/* 
+С помощью предыдущего задания, по его шаблону чёто да получилось!!!!
+запомнить бы
+*/
