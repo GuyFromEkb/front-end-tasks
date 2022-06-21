@@ -59,6 +59,7 @@ function makeCounter() {
         return counter.count++;
     }
 
+
     counter.set = value => (count = value);
     counter.decrease = () => count--;
 
@@ -68,24 +69,12 @@ function makeCounter() {
 let counter = makeCounter();
 
 counter.set(5);
-console.log(counter.count)
+console.log(counter.decrease())
+console.log(counter.decrease())
 
 console.dir(counter);
 
-console.log(counter.name);
-console.log(counter.counter);
-console.log(counter.count);
-
-
-function sayHi() {
-
-    console.log("Hi");
-
-    sayHi.counter++;
-}
-sayHi.counter = 5; // начальное значение
-
-sayHi(); // Hi
-sayHi(); // Hi
-
-console.log(`Вызвана ${sayHi.counter} раза`);
+/* 
+Вроде понятно, а вроде темный лес, пользовался ответами
+//
+*/
