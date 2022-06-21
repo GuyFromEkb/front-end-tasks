@@ -29,3 +29,63 @@ console.log(sum(1)(2).toString());
 console.log(sum(5)(-1)(2).toString());
 console.log(sum(6)(-1)(-2)(-3).toString());
 console.log(sum(0)(1)(2)(3)(4)(5).toString());
+
+
+/* 
+Долго бороля, не решил, взял с ответов....
+*/
+
+
+
+
+/* Измените код makeCounter() так, чтобы счётчик мог увеличивать и устанавливать значение:
+
+counter() должен возвращать следующее значение (как и раньше).
+counter.set(value) должен устанавливать счётчику значение value.
+counter.decrease() должен уменьшать значение счётчика на 1.
+Посмотрите код из песочницы с полным примером использования.
+
+P.S. Для того, чтобы сохранить текущее значение счётчика, можно воспользоваться как замыканием, так и свойством функции. Или сделать два варианта решения: и так, и так.
+ */
+
+
+
+function makeCounter() {
+
+    let count = 0;
+    counter.count = 0;
+
+    function counter() {
+        return counter.count++;
+    }
+
+    counter.set = value => (count = value);
+    counter.decrease = () => count--;
+
+    return counter;
+}
+
+let counter = makeCounter();
+
+counter.set(5);
+console.log(counter.count)
+
+console.dir(counter);
+
+console.log(counter.name);
+console.log(counter.counter);
+console.log(counter.count);
+
+
+function sayHi() {
+
+    console.log("Hi");
+
+    sayHi.counter++;
+}
+sayHi.counter = 5; // начальное значение
+
+sayHi(); // Hi
+sayHi(); // Hi
+
+console.log(`Вызвана ${sayHi.counter} раза`);
