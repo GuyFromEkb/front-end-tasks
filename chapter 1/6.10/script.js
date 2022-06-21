@@ -141,3 +141,7 @@ let user2 = {
 };
 
 askPassword(user2.login.bind(user2, true), user2.login.bind(user2, false));
+
+/* 
+С трудом но на учебных примерах вроооде бы понятно....
+*/
