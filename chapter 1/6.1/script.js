@@ -183,3 +183,41 @@ function printListv2(list) {
 
 }
 printListv2(list);
+
+
+/* Выведите односвязный список из предыдущего задания Вывод односвязного списка в обратном порядке.
+
+Сделайте два решения: с использованием цикла и через рекурсию. */
+
+
+function revList(list) {
+
+    if (list.next != null) {
+        revList(list.next);
+    }
+
+    console.log(list.value);
+}
+
+revList(list);
+
+
+
+function revListV2(list) {
+    let arr = [];
+    let buff = list;
+
+    while (buff != null) {
+        arr.push(buff.value);
+        buff = buff.next;
+    }
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        console.log(arr[i]);
+    }
+}
+
+revListV2(list);
+
+// UPD revListV2 сам не мог догодаться, посмотрел в ответах
+//
