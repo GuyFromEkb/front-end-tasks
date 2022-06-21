@@ -80,5 +80,39 @@ console.log(bed.glasses);
 /* 
 2. Сам не знал, зато теперь запомнил
  инфа в инетрнете: для современных движков неважно, откуда берётся свойство – из объекта или из прототипа. Они запоминают, где было найдено свойство,
-  и повторно используют его в следующем запросе.
+и повторно используют его в следующем запросе.
 */
+
+
+/* Объект rabbit наследует от объекта animal.
+Какой объект получит свойство full при вызове rabbit.eat(): animal или rabbit?
+
+let animal = {
+  eat() {
+    this.full = true;
+  }
+};
+
+let rabbit = {
+  __proto__: animal
+};
+
+rabbit.eat(); */
+
+let animal = {
+    eat() {
+        this.full = true;
+    }
+};
+
+let rabbit = {
+    __proto__: animal
+};
+
+console.log(animal)
+console.log(rabbit)
+
+rabbit.eat()
+
+console.log(animal)
+console.log(rabbit)
