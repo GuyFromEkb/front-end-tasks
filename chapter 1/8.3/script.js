@@ -14,17 +14,41 @@ f.defer(1000); // выведет "Hello!" через 1 секунду */
 
 Function.prototype.defer = function(ms) {
     setTimeout(this, ms);
+};
+
+
+function say() {
+    console.log("PRIVET");
 }
 
+say.defer(1000);
 
-function say(text = "hello") {
-    console.log(text);
+
+
+
+
+/* 
+
+Добавьте всем функциям в прототип метод defer(ms), который возвращает обёртку, откладывающую вызов функции на ms миллисекунд.
+Например, должно работать так:
+
+function f(a, b) {
+  alert( a + b );
 }
 
-const tst = say("PRIVET");
+f.defer(1000)(1, 2); // выведет 3 через 1 секунду.
+Пожалуйста, заметьте, что аргументы должны корректно передаваться оригинальной функции. */
 
-tst().defer(2000);
 
-say("PRIVET").defer(1000);
+Function.prototype.deferV2 = function(ms) {
+    let f = this;
+    return function(...args) {
+        setTimeout(() => f.apply(this, args), ms);
+    };
+};
 
-// console.dir(say);
+function f(a, b) {
+    console.log(a + b);
+}
+
+f.deferV2(1000)(1, 2);
