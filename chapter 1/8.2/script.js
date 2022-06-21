@@ -81,3 +81,19 @@ alert( rabbit.eats ); // ? */
 
 let obj2 = new obj.constructor();
 Приведите пример функции-конструктора для объекта obj, с которой такой вызов корректно сработает. И пример функции-конструктора, с которой такой код поведёт себя неправильно. */
+
+function Animal(className) {
+    this.className = className;
+    this.canEat = true;
+}
+
+const aligator = new Animal("aligator");
+
+const rabbit = new aligator.constructor("rabbit");
+
+console.log(aligator);
+console.log(rabbit);
+
+/* 
+Работает!!
+*/
