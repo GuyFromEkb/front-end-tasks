@@ -21,7 +21,34 @@ alert( counter() ); // 1
 alert( counter2() ); // ?
 alert( counter2() ); // ? */
 
-/*   
+/*   у каждого счетчика своё окружение
 alert( counter2() ); //  => 0
 alert( counter2() ); // => 1  
 */
+//
+
+/* Здесь объект счётчика создан с помощью функции-конструктора.
+
+Будет ли он работать? Что покажет?
+
+function Counter() {
+  let count = 0;
+
+  this.up = function() {
+    return ++count;
+  };
+  this.down = function() {
+    return --count;
+  };
+}
+
+let counter = new Counter();
+
+alert( counter.up() ); // ?
+alert( counter.up() ); // ?
+alert( counter.down() ); // ? */
+
+/*  
+ Через конструктор создался экземпляр и у счетчиков доступ к одной переменной
+*/
+//
