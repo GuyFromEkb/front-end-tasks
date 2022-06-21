@@ -221,9 +221,9 @@ function makeArmy() {
 
         let numberOfShooter = i;
 
-        
-        let shooter = function() { 
-            console.log(numberOfShooter); 
+
+        let shooter = function() {
+            console.log(numberOfShooter);
         };
         shooters.push(shooter);
         i++;
