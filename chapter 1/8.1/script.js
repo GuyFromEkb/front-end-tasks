@@ -99,20 +99,62 @@ let rabbit = {
 
 rabbit.eat(); */
 
-let animal = {
-    eat() {
-        this.full = true;
+/* 
+Получит rabbit, т.к. до вызова метода,свойство full не существует и у animal и у rabbit
+*/
+
+
+
+/* 
+У нас есть два хомяка: шустрый (speedy) и ленивый (lazy); оба наследуют от общего объекта hamster.
+Когда мы кормим одного хомяка, второй тоже наедается. Почему? Как это исправить?
+
+let hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food);
+  }
+};
+
+let speedy = {
+  __proto__: hamster
+};
+
+let lazy = {
+  __proto__: hamster
+};
+
+// Этот хомяк нашёл еду
+speedy.eat("apple");
+alert( speedy.stomach ); // apple
+
+// У этого хомяка тоже есть еда. Почему? Исправьте
+alert( lazy.stomach ); // apple */
+
+
+let hamster = {
+    stomach: [],
+
+    eat(food) {
+        this.stomach.push(food);
     }
 };
 
-let rabbit = {
-    __proto__: animal
+let speedy = {
+    stomach: [],
+    __proto__: hamster
 };
 
-console.log(animal)
-console.log(rabbit)
+let lazy = {
+    stomach: [],
+    __proto__: hamster
+};
 
-rabbit.eat()
 
-console.log(animal)
-console.log(rabbit)
+speedy.eat("apple");
+speedy.eat("grape");
+console.log(speedy.stomach);
+
+
+console.log(lazy.stomach);
