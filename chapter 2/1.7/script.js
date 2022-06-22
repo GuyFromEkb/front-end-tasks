@@ -34,28 +34,41 @@ elem.textContent = text */
 const task2 = document.querySelector('.task2');
 const ol = task2.querySelector('ol');
 
-// console.dir(ol);
-// console.log(ol.children)
 
 function clear(elem) {
-
-
     const childs = Array.from(elem.children);
-
-    // childs.forEach(element => {
-    //     console.log(element)
-    // });
-
-    // console.log(childs.length)
-
-
 
     if (childs.length > 0) {
         childs.forEach(item => {
             item.remove();
         });
     }
-
 }
 
-clear(ol); // очищает список
+clear(ol);
+
+/* 
+В примере ниже вызов table.remove() удаляет таблицу из документа.
+Но если вы запустите его, вы увидите, что текст "aaa" все еще виден.
+Почему так происходит?
+
+<table id="table">
+  aaa
+  <tr>
+    <td>Тест</td>
+  </tr>
+</table>
+
+<script>
+  alert(table); // таблица, как и должно быть
+
+  table.remove();
+  // почему в документе остался текст "ааа"?
+</script> 
+*/
+
+
+/* 
+Не правильно написан HTML CODE 
+
+*/
