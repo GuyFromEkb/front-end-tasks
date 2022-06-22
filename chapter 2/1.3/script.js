@@ -34,3 +34,27 @@ console.log(li);
 
 Правда, что elem.lastChild.nextSibling всегда равен null?
 Правда, что elem.children[0].previousSibling всегда равен null ? */
+
+/* 
+1 - да
+2 - нет
+*/
+
+
+/* Напишите код, который выделит красным цветом все ячейки в таблице по диагонали.
+Вам нужно получить из таблицы <table> все диагональные <td> и выделить их, используя код:
+//  в переменной td находится DOM-элемент для тега <td>
+
+td.style.backgroundColor = 'red'; */
+
+const task3 = document.querySelector('.task3');
+const td = task3.querySelectorAll('td');
+
+let numb = 0;
+td.forEach((item, index) => {
+
+    if (index == numb) {
+        item.style.backgroundColor = 'red';
+        numb += 6;
+    }
+})
