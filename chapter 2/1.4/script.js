@@ -18,10 +18,10 @@ const td = table.querySelector('td');
 const form = document.querySelector('[name="search"]');
 const inputs = form.querySelectorAll('input');
 
-console.log(table);
-console.log(label);
-console.log(td);
-console.log(form);
+console.log(table); //1
+console.log(label); //2
+console.log(td); //3
+console.log(form); //4
 
-console.log(inputs[0]);
-console.log(inputs[inputs.length - 1]);
+console.log(inputs[0]); //5
+console.log(inputs[inputs.length - 1]); //6
