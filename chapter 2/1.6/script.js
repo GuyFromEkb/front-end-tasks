@@ -21,9 +21,9 @@ const task2 = document.querySelector('.task2');
 const links = document.querySelectorAll('a');
 
 links.forEach(item => {
-    if (item.href.includes('ftp://')) {
-        console.log(item.href);
-    }
-    // console.log(item.href)
-    // console.dir(item);
+    const link = item.getAttribute("href");
+
+    if (link && link.includes('://') && !(link.includes('http://internal.com')))
+        item.style.color = "orange";
+
 })
