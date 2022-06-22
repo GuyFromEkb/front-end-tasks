@@ -106,4 +106,91 @@ function runTask4() {
     }
 }
 
-runTask4();
+// runTask4();
+
+
+/* Напишите функцию createTree, которая создаёт вложенный список ul/li из объекта.
+Например:
+
+let data = {
+  "Рыбы": {
+    "форель": {},
+    "лосось": {}
+  },
+
+  "Деревья": {
+    "Огромные": {
+      "секвойя": {},
+      "дуб": {}
+    },
+    "Цветковые": {
+      "яблоня": {},
+      "магнолия": {}
+    }
+  }
+}; */
+
+
+
+const task5 = document.querySelector('.task5');
+
+
+let data = {
+    "Рыбы": {
+        "форель": {},
+        "лосось": {}
+    },
+
+    "Деревья": {
+        "Огромные": {
+            "секвойя": {},
+            "дуб": {}
+        },
+        "Цветковые": {
+            "яблоня": {},
+            "магнолия": {}
+        }
+    }
+};
+
+
+function createTreeInnerHTML(container, obj) {
+
+    if (!Object.keys(obj).length) return;
+
+    const ul = document.createElement('ul');
+
+    for (let key in obj) {
+
+        let li = document.createElement('li');
+
+        li.textContent = key;
+
+        if (typeof obj[key] === 'object') {
+            createTreeInnerHTML(li, obj[key]);
+        }
+        ul.append(li);
+    }
+    container.append(ul);
+
+}
+
+function createTreeDOM(block, object) {
+    let ul;
+
+    if (Object.keys(object).length > 0) {
+
+        ul = document.createElement('ul');
+
+        block.append(ul);
+    }
+    for (let key in object) {
+
+        ul.innerHTML += `<li>${key}</li>`;
+
+        createTreeDOM(ul.lastElementChild, object[key]);
+    }
+}
+
+createTreeInnerHTML(task5, data);
+createTreeDOM(task5, data);
