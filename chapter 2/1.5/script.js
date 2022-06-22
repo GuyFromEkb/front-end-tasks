@@ -62,5 +62,4 @@ document – объект класса HTMLDocument.
 занимает 3е место (после node>document>HTMLDocument)
 
 насоелуется
-
 */
