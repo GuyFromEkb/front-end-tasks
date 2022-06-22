@@ -23,3 +23,15 @@ td {
     border: 1px solid black;
     padding: 3px 5px;
 }
+
+section {
+    position: relative;
+}
+
+h3 {
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
