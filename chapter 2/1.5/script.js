@@ -14,6 +14,23 @@ const allLi = task1.querySelectorAll('li');
 allLi.forEach((item, index) => {
     const chilren = item.querySelectorAll('li');
     console.log(`текст: ${item.firstChild.textContent.trim()} число потомков: ${chilren.length}`);
-})
+});
 
-console.log(allLi);
+/* 
+Что выведет этот код?
+
+<html>
+
+<body>
+  <script>
+    alert(document.body.lastChild.nodeType);
+  </script>
+</body>
+
+</html>
+
+*/
+
+/* 
+
+*/
