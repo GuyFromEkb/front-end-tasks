@@ -194,3 +194,21 @@ function createTreeDOM(block, object) {
 
 createTreeInnerHTML(task5, data);
 createTreeDOM(task5, data);
+
+/* 
+Есть дерево, организованное в виде вложенных списков ul/li.
+Напишите код, который добавит каждому элементу списка <li> количество вложенных в него элементов. Узлы нижнего уровня, без детей – пропускайте.
+ */
+
+function task6() {
+    const task6 = document.querySelector('.task6');
+    const li = task6.querySelectorAll('li');
+
+    li.forEach(elem => {
+        const subElementsLi = elem.querySelectorAll('li').length;
+
+        if (subElementsLi > 0) elem.firstChild.data += `[${subElementsLi}]`;
+    });
+}
+
+task6();
