@@ -27,3 +27,10 @@ const li = task1.querySelectorAll("li")[1];
 console.log(div);
 console.log(ul);
 console.log(li);
+
+
+
+/* Если elem – произвольный узел DOM-элемента…
+
+Правда, что elem.lastChild.nextSibling всегда равен null?
+Правда, что elem.children[0].previousSibling всегда равен null ? */
