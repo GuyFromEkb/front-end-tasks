@@ -34,29 +34,28 @@ class Animal {
 
 class Rabbit extends Animal {
     constructor(name) {
+        const buffDate = new Date();
         super(name);
-        this.created = Date.now().getHours;
+        this.created = `${buffDate.getHours()} : ${buffDate.getMinutes()}`;
     }
 }
 
-let rabbit = new Rabbit("Белый кролик"); // Error: this is not defined
+let rabbit = new Rabbit("Белый кролик");
 console.log(rabbit.name);
-console.log(rabbit.created.getHours());
-
-
-
-
-
-
-
-
-
+console.log(rabbit.created);
 
 
 
 /* 
+У нас есть класс Clock. Сейчас он выводит время каждую секунду
+Создайте новый класс ExtendedClock, который будет наследоваться от Clock и добавьте параметр precision – количество миллисекунд между «тиками». 
+Установите значение в 1000 (1 секунда) по умолчанию.
+Сохраните ваш код в файл extended-clock.js
+Не изменяйте класс clock.js. Расширьте его.
+*/
+
 class Clock {
-    constructor({ template }) {
+    constructor(template) {
         this.template = template;
     }
 
@@ -91,5 +90,23 @@ class Clock {
 }
 
 
-let clock = new Clock({ template: 'h:m:s' });
-clock.start(); */
+
+class ExtendedClock extends Clock {
+    constructor({ template }, precision) {
+        super(template);
+        this.precision = precision;
+    }
+
+    start() {
+        if (this.precision) {
+            this.render();
+            this.timer = setInterval(() => this.render(), this.precision)
+        } else
+            super.start()
+    }
+};
+
+
+
+let Extclock = new ExtendedClock({ template: 'h:m:s' }, 3000);
+Extclock.start();
