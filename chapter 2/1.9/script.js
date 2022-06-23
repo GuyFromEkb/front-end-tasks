@@ -69,6 +69,5 @@ task3();
 /* 
 clientWidth - типо число , getComputedStyle(elem).width - строка
 clientWidth - включая padding,  etComputedStyle(elem).width - без padding 
-getComputedStyle - не работает на стр
-
+getComputedStyle - не корректно работает на строчный элемент
 */
