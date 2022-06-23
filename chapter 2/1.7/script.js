@@ -324,3 +324,44 @@ const task9 = document.querySelector('.task9');
 const liOne = task9.querySelector('#one');
 
 liOne.insertAdjacentHTML('afterend', `<li>2</li><li>3</li>`);
+
+
+/* 
+Вот таблица:
+В ней может быть больше строк.
+Напишите код для сортировки по столбцу "name".
+*/
+
+function sortByName() {
+    const task10 = document.querySelector('.task10');
+    const trs = task10.querySelectorAll('tr');
+
+
+
+
+    let mas = Array.from(trs);
+    mas.splice(0, 1);
+
+    mas.sort((a, b) => {
+
+        const tdA = a.querySelector('td').textContent;
+        const tdB = b.querySelector('td').textContent;
+
+        if (tdA < tdB) {
+
+            a.after(b);
+            return 1;
+
+        } else if (tdA > tdB) {
+
+            b.after(a);
+            return -1;
+
+        }
+
+        return 0;
+
+    });
+}
+
+sortByName();
