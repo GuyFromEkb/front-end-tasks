@@ -1,0 +1,56 @@
+body {
+    background-color: gray;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsk {
+    padding: 50px;
+    margin: 40px 0;
+    border: 3px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 3px 5px;
+}
+
+section {
+    position: relative;
+}
+
+.class-task1 {
+    position: absolute;
+    padding: 5px;
+    color: #fff;
+    background-color: red;
+}
+
+h3 {
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.task8 .hrs {
+    color: red;
+}
+
+.task8 .min {
+    color: green;
+}
+
+.task8 .sec {
+    color: blue;
+}
