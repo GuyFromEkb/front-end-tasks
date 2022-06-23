@@ -35,3 +35,15 @@ h3 {
     top: 5px;
     left: 10px;
 }
+
+.task8 .hrs {
+    color: red;
+}
+
+.task8 .min {
+    color: green;
+}
+
+.task8 .sec {
+    color: blue;
+}

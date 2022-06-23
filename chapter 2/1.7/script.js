@@ -274,3 +274,40 @@ function createCalendar(elem, year, month) {
 
 const task7 = document.querySelector('.task7');
 createCalendar(task7, 2012, 2);
+
+
+/*
+ Создайте цветные часы как в примере ниже:
+Для стилизации используйте HTML/CSS, JavaScript должен только обновлять время в элементах. 
+*/
+
+
+
+function task8() {
+    const task8 = document.querySelector('.task8');
+    const start = task8.querySelector('[value="Старт"]');
+    const stop = task8.querySelector('[value="Стоп"]');
+    const hours = task8.querySelector('.hrs');
+    const minute = task8.querySelector('.min');
+    const second = task8.querySelector('.sec');
+    let timer;
+
+    start.addEventListener('click', () => {
+
+        timer = setInterval(() => {
+            const date = new Date();
+            let hrs = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours();
+            let min = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes();
+            let sec = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
+            hours.innerHTML = hrs;
+            minute.innerHTML = min;
+            second.innerHTML = sec;
+        }, 1000);
+
+    });
+
+    stop.addEventListener('click', () => {
+        clearInterval(timer);
+    });
+}
+task8();
