@@ -44,7 +44,7 @@ setInterval(function() {
     showNotification({
         top: 10,
         right: 10,
-        html: 'Hello ',
+        html: 'long Text text Long',
         className: "class-task1"
     });
 }, 2000);
