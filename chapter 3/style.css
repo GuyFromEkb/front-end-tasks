@@ -1,0 +1,23 @@
+body {
+    background-color: gray;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsk {
+    padding: 50px;
+    margin: 40px 0;
+    border: 3px solid black;
+}
+
+h3 {
+    color: #fff;
+    margin: 0;
+    top: 5px;
+    left: 10px;
+}
