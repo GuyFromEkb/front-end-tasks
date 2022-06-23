@@ -54,3 +54,9 @@ h3 {
 .task8 .sec {
     color: blue;
 }
+
+.task2-scroll-el {
+    overflow-y: scroll;
+    width: 150px;
+    height: 150px;
+}
