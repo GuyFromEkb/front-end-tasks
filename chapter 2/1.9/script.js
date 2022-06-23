@@ -27,3 +27,33 @@ const width = scrollEl.offsetWidth - scrollEl.clientWidth - scrollEl.clientLeft;
 
 
 console.log(width);
+
+
+
+
+/* 
+Исходный документ выглядит так:
+Каковы координаты центра поля?
+
+Вычислите их и используйте, чтобы поместить мяч в центр поля:
+
+
+Элемент должен позиционироваться за счёт JavaScript, а не CSS.
+Код должен работать с любым размером мяча (10, 20, 30 пикселей) и любым размером поля без привязки к исходным значениям.
+P.S. Да, центрирование можно сделать при помощи чистого CSS, но задача именно на JavaScript. Далее будут другие темы и более сложные ситуации, 
+когда JavaScript будет уже точно необходим, это – своего рода «разминка». 
+*/
+
+function task3() {
+    const task3 = document.querySelector('.task3');
+    const field = task3.querySelector('#field');
+    const ball = task3.querySelector('#ball');
+
+    const hSide = (field.clientHeight - ball.clientWidth) / 2 + 'px';
+    const wSide = (field.clientWidth - ball.clientWidth) / 2 + 'px';
+
+    ball.style.paddingTop = hSide;
+    ball.style.paddingLeft = wSide;
+}
+
+task3();
