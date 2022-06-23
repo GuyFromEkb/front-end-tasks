@@ -57,3 +57,18 @@ function task3() {
 }
 
 task3();
+
+
+/* 
+В чём отличие между getComputedStyle(elem).width и elem.clientWidth?
+Укажите хотя бы 3 отличия, лучше – больше.
+ */
+
+
+
+/* 
+clientWidth - типо число , getComputedStyle(elem).width - строка
+clientWidth - включая padding,  etComputedStyle(elem).width - без padding 
+getComputedStyle - не работает на стр
+
+*/
