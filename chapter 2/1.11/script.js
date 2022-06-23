@@ -65,6 +65,7 @@ function positionAt(anchor, position, elem) {
 function showNote(anchor, position, html) {
     let note = document.createElement('div');
     note.className = "note";
+    note.classList.add('note-task2');
     note.innerHTML = html;
     document.body.append(note);
 
@@ -73,6 +74,17 @@ function showNote(anchor, position, html) {
 
 let blockquote = document.querySelector('blockquote');
 
-showNote(blockquote, "top", "note above");
-showNote(blockquote, "right", "note at the right");
-showNote(blockquote, "bottom", "note below");
+const task2 = document.querySelector('.task2');
+const btnTask2 = task2.querySelector('button');
+
+btnTask2.addEventListener('click', () => {
+    const oldEl = document.querySelectorAll('.note-task2');
+
+    oldEl.forEach(item => {
+        item.remove();
+    });
+
+    showNote(blockquote, "top", "task2 - note above");
+    showNote(blockquote, "right", "task2 - note at the right");
+    showNote(blockquote, "bottom", "task2 - note below");
+});
