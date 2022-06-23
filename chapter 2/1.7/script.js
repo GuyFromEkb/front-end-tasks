@@ -212,3 +212,65 @@ function task6() {
 }
 
 task6();
+
+
+/* 
+Напишите функцию createCalendar(elem, year, month).
+Вызов функции должен создать календарь для заданного месяца month в году year и вставить его в elem.
+Календарь должен быть таблицей, где неделя – это <tr>, а день – это <td>. У таблицы должен быть заголовок с названиями дней недели, каждый день – <th>, первым днём недели должен быть понедельник.
+Например, createCalendar(cal, 2012, 9) сгенерирует в cal следующий календарь:
+ */
+
+
+function createCalendar(elem, year, month) {
+    const table = document.createElement('table');
+
+    table.innerHTML = `
+    <tr>
+    <th>пн</th>
+    <th>вт</th>
+    <th>ср</th>
+    <th>чт</th>
+    <th>пт</th>
+    <th>сб</th>
+    <th>вс</th>
+    </tr>
+    `;
+
+    elem.append(table);
+
+    const mon = new Date(year, --month);
+    const carrentMonth = mon.getMonth();
+
+    while (carrentMonth == mon.getMonth()) {
+
+        const tr = document.createElement('tr');
+        table.append(tr);
+
+        function getDay(date) {
+
+            let day = date.getDay();
+
+            if (day == 0)
+                day = 7;
+
+            return day - 1;
+        }
+
+        for (let day = 0; day < 7; day++) {
+
+            let td = document.createElement('td');
+
+            if (day == getDay(mon) && carrentMonth == mon.getMonth()) {
+                td.innerHTML = mon.getDate();
+
+                mon.setDate(mon.getDate() + 1);
+
+            }
+            tr.append(td);
+        }
+    }
+}
+
+const task7 = document.querySelector('.task7');
+createCalendar(task7, 2012, 2);
