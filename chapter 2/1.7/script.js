@@ -276,12 +276,12 @@ const task7 = document.querySelector('.task7');
 createCalendar(task7, 2012, 2);
 
 
+
+
 /*
  Создайте цветные часы как в примере ниже:
 Для стилизации используйте HTML/CSS, JavaScript должен только обновлять время в элементах. 
 */
-
-
 
 function task8() {
     const task8 = document.querySelector('.task8');
@@ -311,3 +311,16 @@ function task8() {
     });
 }
 task8();
+
+
+/* 
+Напишите код для вставки <li>2</li><li>3</li> между этими двумя <li>:
+<ul id="ul">
+  <li id="one">1</li>
+  <li id="two">4</li>
+</ul> 
+*/
+const task9 = document.querySelector('.task9');
+const liOne = task9.querySelector('#one');
+
+liOne.insertAdjacentHTML('afterend', `<li>2</li><li>3</li>`);
