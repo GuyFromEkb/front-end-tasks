@@ -46,3 +46,21 @@
     display: inline-block;
     margin: 10px 0;
 }
+
+
+/* Task4 */
+
+.task4 .left {
+    float: left;
+    width: 30%;
+    background: #aef;
+}
+
+.task4 .right {
+    float: right;
+    width: 70%;
+    background: tan;
+    border-left: 5px solid rgb(0, 0, 0);
+    padding-left: 30px;
+    box-sizing: border-box;
+}
