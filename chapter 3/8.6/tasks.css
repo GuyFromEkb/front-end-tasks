@@ -11,3 +11,60 @@
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
 }
+
+.task2 {
+    position: relative;
+    height: 900px;
+}
+
+.task2 .modal__form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task2 .modal__img {
+    object-fit: contain;
+    height: auto;
+    width: 20%;
+}
+
+.task2 .modal__login,
+.task2 .modal__psw {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task2 button {
+    width: 25%;
+}
+
+.task2 .modal {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: solid 2px black;
+    align-items: flex-start;
+    display: flex;
+    background: #ffff;
+    width: 400px;
+    height: 150px;
+}
+
+.task2 .overlay {
+    background: rgba(54, 202, 240, 0.3);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+}
+
+.task2 .overlay p {
+    text-align: center;
+    margin-top: 200px;
+}
