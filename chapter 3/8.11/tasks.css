@@ -1,5 +1,4 @@
 .task1 .block {
-    position: relative;
     height: 150px;
     border: 1px solid #CCC;
     background: #eee;
@@ -11,6 +10,16 @@
     height: 80%;
     border: 1px solid black;
     background: rgb(243, 0, 0);
-    /*либо position absolute, ичерез трансформ -50% + топ50% но тогда нужна высота заданная не в процентах  */
+    /*либо position absolute, и релетив на родители ичерез трансформ -50% + топ50% но тогда нужна высота заданная не в процентах  */
     margin-top: 14px;
+}
+
+.task2 input::-moz-placeholder {
+    font-weight: 600;
+    color: red;
+}
+
+.task2 input::-webkit-input-placeholder {
+    color: red;
+    font-weight: 600;
 }
