@@ -1,0 +1,22 @@
+.task2 li {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.task2 .icon {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+.task2 .open .icon {
+    background: url(https://js.cx/sprite-tree/minus.gif) no-repeat;
+}
+
+.task2 .closed .icon {
+    background: url(https://js.cx/sprite-tree/plus.gif) no-repeat;
+}
+
+.task2 .leaf .icon {
+    background: url(https://js.cx/sprite-tree/article.gif) no-repeat;
+}
