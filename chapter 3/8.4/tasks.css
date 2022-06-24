@@ -20,3 +20,29 @@
 .task2 .leaf .icon {
     background: url(https://js.cx/sprite-tree/article.gif) no-repeat;
 }
+
+
+/* TASK 3 */
+
+.task3 .nav {
+    margin: 0 auto;
+    width: 850px;
+}
+
+.task3 .left {
+    float: left;
+}
+
+.task3 .right {
+    float: right;
+}
+
+.task3 .pages {
+    list-style: none;
+    text-align: center;
+}
+
+.task3 li {
+    display: inline-block;
+    margin: 10px 0;
+}
