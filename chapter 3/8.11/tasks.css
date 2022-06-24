@@ -1,4 +1,6 @@
 .task1 .block {
+    display: flex;
+    align-items: center;
     height: 150px;
     border: 1px solid #CCC;
     background: #eee;
@@ -7,11 +9,12 @@
 .task1 .spacer {
     margin-left: 20%;
     margin-right: 20%;
-    height: 80%;
+    height: ;
     border: 1px solid black;
     background: rgb(243, 0, 0);
     /*либо position absolute, и релетив на родители ичерез трансформ -50% + топ50% но тогда нужна высота заданная не в процентах  */
-    margin-top: 14px;
+    /* margin-top: 14px; можно ещё так */
+    /*но лучше флекс для родителя*/
 }
 
 .task2 input::-moz-placeholder {
