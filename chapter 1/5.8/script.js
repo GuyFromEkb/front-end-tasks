@@ -72,14 +72,14 @@ let messages = [
 P.S. Даты в JavaScript можно хранить как объекты встроенного класса Date, которые мы разберём позднее. */
 
 
-let messages1 = [
+const messages1 = [
     { text: "Hello", from: "John" },
     { text: "How goes?", from: "John" },
     { text: "See you soon", from: "Alice" }
 ];
 
 
-let weakMap1 = new WeakMap();
+const weakMap1 = new WeakMap();
 
 //сообщения отправлены но не прочитаны
 function dateMakeMessage(arr) {
@@ -106,12 +106,9 @@ for (const item of messages1) {
     } else {
         console.log(`сообщение "${item.text}" прочитано ${new Date(weakMap1.get(item))}`)
     }
-
-    console.log(weakMap1.get(item));
 }
 
 
-console.log(weakMap1.get(messages1[1]));
 
 
 
