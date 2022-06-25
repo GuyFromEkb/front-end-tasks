@@ -11,25 +11,49 @@ P.S.Когда сообщение удаляется из массива message
 P.P.S.Нам не следует модифицировать сами объекты сообщений, добавлять туда свойства.Если сообщения принадлежат какому - то другому коду, то это может привести к плохим последствиям.*/
 
 
-let visitedSet = new Map();
-let messages = [
+const messages = [
     { text: "Hello", from: "John" },
     { text: "How goes?", from: "John" },
     { text: "See you soon", from: "Alice" }
 ];
 
-visitedSet.set("Hello", "John");
-visitedSet.set("How goes?", "John");
-visitedSet.set("See you soon", "Alice");
+const weakMap = new WeakMap();
 
-delete messages[0];
-delete messages[1];
-delete messages[2];
+//делаем список не прочитанных сообщений
+function notRead(arr) {
 
-messages[3] = { age: 12 };
-messages = null;
+    for (const item of arr) {
+        weakMap.set(item, false);
+    }
+}
 
-console.log(visitedSet.has("Hello"))
-console.log(visitedSet.has("How goes?"))
-console.log(visitedSet.has("See you soon"))
-console.log(messages);
+const whoReadMessage = [
+    { text: "Hello", from: "John" },
+    { text: "See you soon", from: "Alice" }
+];
+
+//меняем статус сообщений на "прочитанный"
+function yesRead(arr) {
+    for (const item of arr) {
+        weakMap.set(item, true);
+    }
+}
+
+//проверяем и удаляем из массива сообщений, все прочитанные
+function readMessage(arr) {
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (weakMap.has(arr[i]))
+            arr.splice(i, 1);
+    }
+}
+
+notRead(messages);
+yesRead(whoReadMessage);
+readMessage(messages);
+
+//проверяем для кого остались не прочитанные сообщения или какие ...
+for (const item of messages) {
+    console.log(item.from);
+};
